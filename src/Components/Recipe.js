@@ -22,29 +22,29 @@ class Recipe extends Component {
             <div>
                 <button onClick={this.toggle}>{this.props.recipe.name}</button>
                  <Collapse in={this.state.recipeIsHidden}>
-                        <div className="row">
-                            <div className="col-sm-6">
-                                <h4>Ingredients</h4>
-                                <p>{this.props.recipe.ingredients}</p>
-                               
+                    {/*wrap contents of Collapse inside the 
+                        .container, so you can add as many .row without error
+                    */}
+                    <div className="container">
+                            <div className="row">
+                                <div className="col-sm-6">
+                                    <h4>Ingredients</h4>
+                                    <p>{this.props.recipe.ingredients}</p>
+                                </div>
+                                <div className="col-sm-6">
+                                    <h4>Instructions</h4>
+                                    <p>{this.props.recipe.instructions}</p>
+                                </div>
                             </div>
-                            <div className="col-sm-6">
-                                <h4>Instructions</h4>
-                                <p>{this.props.recipe.instructions}</p>
-                                 <button className="btn btn-primary" 
-                                    onClick={this.edit}>Edit</button>
-                                <button className="btn btn-danger"
-                                    onClick={this.deleteRecipe}>Delete</button>  
+                            <div className="row">
+                                <div className="col-sm-12">
+                                    <button className="btn btn-default" 
+                                        onClick={this.edit}>Edit</button>
+                                    <button className="btn btn-danger"
+                                        onClick={this.deleteRecipe}>Delete</button>  
+                                </div>
                             </div>
-                        </div>
-                        {/*<div className="row">*/}
-                            {/*<div className="col-sm-12">*/}
-                                {/*<button className="btn btn-default" 
-                                    onClick={this.edit}>Edit</button>*/}
-                                {/*<button className="btn btn-danger"
-                                    onClick={this.deleteRecipe}>Delete</button>                        */}
-                            {/*</div>*/}
-                        {/*</div>*/}
+                     </div>
                  </Collapse>
             </div>
         )
