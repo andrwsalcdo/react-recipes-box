@@ -19,7 +19,7 @@ function seedStorage() {
 function newRecipe(recipe) {
     let counter = storage.getItem(INDEX_KEY) || 0; 
     counter = counter + 1; 
-    reciipe._id = counter; 
+    recipe._id = counter; 
     let key = 'recipe' + counter; 
     storage.setItem(key, JSON.stringify(recipe)); 
     storage.setItem(INDEX_KEY, counter); 
@@ -27,13 +27,13 @@ function newRecipe(recipe) {
 
 function getRecipes() {
     let recipes = []; 
-    storage.map((index) => {
-        let key = storage.key(index); 
-        if(key.includes('recipe')) {
-            let recipe = storage.getItem(key); 
-            recipes.push(JSON.parse(recipe)); 
+    for (let i = 0; i < storage.length; i++) {
+        let key = storage.key(i);
+        if (key.includes('recipe')) {
+        let recipe = storage.getItem(key);
+        recipes.push(JSON.parse(recipe));
         }
-    })
+    }
     recipes = recipes.sort((a,b) => {
         return a._id - b._id; 
     })

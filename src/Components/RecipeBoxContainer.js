@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 
 //import child components 
     import RecipeBoxTitle from './RecipeBoxTitle';
-    // import Recipe from './Recipe';
+    import Recipe from './Recipe';
     // import Editor from './Editor';
     import NewRecipeButton from './NewRecipeButton';
 
@@ -12,7 +13,7 @@ data.initialize(window.localStorage);
 
 
 
-class RecipeBoxContainer extends React.Component {
+class RecipeBoxContainer extends Component {
     constructor(props) {
         super(props); 
         this.state = {
@@ -50,18 +51,18 @@ class RecipeBoxContainer extends React.Component {
         }, () => {this.setState({ modalIsOpen: true })} )
     }
     render () {
-        // let recipes = this.state.recipes.map((recipe) => {
-        //     return (<Recipe recipe={recipe} delete={this.deleteRecipe} edit={this.edit} />)
-        // })
+        let recipes = this.state.recipes.map((recipe) => {
+            return (<Recipe recipe={recipe} delete={this.deleteRecipe} edit={this.edit} />)
+        })
         return (
             <div className="container">
                 <RecipeBoxTitle />
                 <NewRecipeButton 
                     //pass open modal click handler
                     onClickOpen={this.open} />
-                {/*<Editor save={this.save} modalisOpen={this.state.modalIsOpen} close={this.close} 
-                    currentRecipe={this.state.currentRecipe} />
-                {recipes}*/}
+                {/*<Editor save={this.save} modalIsOpen={this.state.modalIsOpen} close={this.close} 
+                    currentRecipe={this.state.currentRecipe} />*/}
+                {recipes}
             </div>
         )
     }
