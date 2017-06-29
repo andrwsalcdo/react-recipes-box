@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 
-
-//import child components 
+//import child components
     import RecipeBoxTitle from './RecipeBoxTitle';
     import Recipe from './Recipe';
-    // import Editor from './Editor';
+    import Editor from './Editor';
     import NewRecipeButton from './NewRecipeButton';
 
 //important data methods and recipes for local storage 
 let data = require('../data/localdata'); 
 data.initialize(window.localStorage); 
-
 
 
 class RecipeBoxContainer extends Component {
@@ -27,12 +25,7 @@ class RecipeBoxContainer extends Component {
         this.setState({ modalIsOpen: false }); 
     }
     //open modal 
-    open = () => { this.setState({ modalIsOpen: true, currentRecipe: {} }); }
-    // reset data 
-    // reset = () => {
-    //     localStorage.clear(); 
-    //     location.reload(); 
-    // }
+    open = () => {this.setState({ modalIsOpen: true, currentRecipe: {} }); }
     //save recipe
     save = (recipe) => {
         data.saveRecipe(recipe); 
@@ -45,23 +38,18 @@ class RecipeBoxContainer extends Component {
     }
     //edit recipe 
     edit = (recipe) => {
-        console.log(recipe);
-        this.setState({ 
-            currentRecipe: recipe
-        }, () => {this.setState({ modalIsOpen: true })} )
+        this.setState({ currentRecipe: recipe}, () => {this.setState({ modalIsOpen: true })} )
     }
     render () {
-        let recipes = this.state.recipes.map((recipe) => {
-            return (<Recipe recipe={recipe} delete={this.deleteRecipe} edit={this.edit} />)
+        let recipes = this.state.recipes.map((recipe,i) => {
+            return (<Recipe key={i} recipe={recipe} delete={this.deleteRecipe} edit={this.edit} />)
         })
         return (
             <div className="container">
                 <RecipeBoxTitle />
-                <NewRecipeButton 
-                    //pass open modal click handler
-                    onClickOpen={this.open} />
-                {/*<Editor save={this.save} modalIsOpen={this.state.modalIsOpen} close={this.close} 
-                    currentRecipe={this.state.currentRecipe} />*/}
+                <NewRecipeButton onClickOpen={this.open} />
+                <Editor save={this.save} show={this.state.modalIsOpen} onHide={this.close} 
+                recipe={this.state.currentRecipe} />
                 {recipes}
             </div>
         )
