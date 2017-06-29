@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 //import child components
     import RecipeBoxTitle from '../Components/RecipeBoxTitle.js'
     import RecipeContainer from './RecipeContainer';
-    import Editor from '../Components/Editor';
+    import EditorContainer from './EditorContainer';
     import NewRecipeButton from '../Components/NewRecipeButton';
 
 //important data methods and recipes for local storage 
@@ -48,7 +48,7 @@ class RecipeBoxContainer extends Component {
             <div className="container">
                 <RecipeBoxTitle />
                 <NewRecipeButton onClickOpen={this.open} />
-                <Editor save={this.save} show={this.state.modalIsOpen} onHide={this.close} 
+                <EditorContainer save={this.save} show={this.state.modalIsOpen} onHide={this.close} 
                 recipe={this.state.currentRecipe} />
                 {recipes}
             </div>
