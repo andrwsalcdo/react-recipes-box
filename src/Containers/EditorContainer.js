@@ -48,6 +48,7 @@ class EditorContainer extends Component {
                 handleIngredients={this.handleIngredients}
                 handleInstructions={this.handleInstructions}
                 onClickSave={this.save}
+                recipe={this.state}
             />
         )
     }

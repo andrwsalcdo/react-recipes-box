@@ -11,25 +11,25 @@ const Editor = (props) => (
             <div className="form-group">
                 <label className="control-label">Name</label>
                 <input type="text" className="form-control"
-                value={props.name} onChange={props.handleName}
+                value={props.recipe.name} onChange={props.handleName}
                 placeholder="What do you call it?"/>
             </div>
             <div className="form-group">
                 <label className="control-label">Ingredients</label>
                 <input type="text" className="form-control"
-                value={props.ingredients} onChange={props.handleIngredients}
+                value={props.recipe.ingredients} onChange={props.handleIngredients}
                 placeholder="What do you need?"/>
             </div>
             <div className="form-group">
                 <label className="control-label">Instructions</label>
                 <input type="text" className="form-control"
-                value={props.instructions} onChange={props.handleInstructions}
+                value={props.recipe.instructions} onChange={props.handleInstructions}
                 placeholder="How do you do it?"/>
             </div>
         </Modal.Body>
 
         <Modal.Footer>
-            <Button bsStyle="primary" onClick={this.save}>Save</Button>
+            <Button bsStyle="primary" onClick={props.onClickSave}>Save</Button>
         </Modal.Footer>
     </Modal>
 )
