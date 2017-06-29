@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 //import child components
-    import RecipeBoxTitle from './RecipeBoxTitle';
-    import Recipe from './Recipe';
-    import Editor from './Editor';
-    import NewRecipeButton from './NewRecipeButton';
+    import RecipeBoxTitle from '../Components/RecipeBoxTitle.js'
+    import RecipeContainer from './RecipeContainer';
+    import Editor from '../Components/Editor';
+    import NewRecipeButton from '../Components/NewRecipeButton';
 
 //important data methods and recipes for local storage 
 let data = require('../data/localdata'); 
@@ -40,9 +40,9 @@ class RecipeBoxContainer extends Component {
     edit = (recipe) => {
         this.setState({ currentRecipe: recipe}, () => {this.setState({ modalIsOpen: true })} )
     }
-    render () {
+    render() {
         let recipes = this.state.recipes.map((recipe,i) => {
-            return (<Recipe key={i} recipe={recipe} delete={this.deleteRecipe} edit={this.edit} />)
+            return (<RecipeContainer key={i} recipe={recipe} delete={this.deleteRecipe} edit={this.edit} />)
         })
         return (
             <div className="container">

@@ -1,55 +1,32 @@
-import React, { Component } from 'react';
-import { Collapse } from 'react-bootstrap'
+import React from 'react';
+import { Collapse } from 'react-bootstrap';
 
-class Recipe extends Component {
-    constructor(props) {
-        super(props); 
-        this.state = { recipeIsHidden: false }
-    } 
-    deleteRecipe = () => {
-        this.props.delete(this.props.recipe) 
-    }
-    edit = () => {
-        this.props.edit(this.props.recipe)
-    }
-    toggle = (e) => {
-        e.preventDefault();
-        this.setState({ recipeIsHidden: !this.state.recipeIsHidden }); 
-    }
-
-    render () {
-        return (
-            <div>
-                <button onClick={this.toggle}>{this.props.recipe.name}</button>
-                 <Collapse in={this.state.recipeIsHidden}>
-                    {/*wrap contents of Collapse inside the 
-                        .container, so you can add as many .row without error
-                    */}
+const Recipe= (props) => (
+         <div>
+                <button onClick={props.onClickToggle}>{props.recipe.name}</button>
+                 <Collapse in={props.recipeIsHidden}>
                     <div className="container">
                             <div className="row">
                                 <div className="col-sm-6">
                                     <h4>Ingredients</h4>
-                                    <p>{this.props.recipe.ingredients}</p>
+                                    <p>{props.recipe.ingredients}</p>
                                 </div>
                                 <div className="col-sm-6">
                                     <h4>Instructions</h4>
-                                    <p>{this.props.recipe.instructions}</p>
+                                    <p>{props.recipe.instructions}</p>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-sm-12">
                                     <button className="btn btn-default" 
-                                        onClick={this.edit}>Edit</button>
+                                        onClick={props.onClickEdit}>Edit</button>
                                     <button className="btn btn-danger"
-                                        onClick={this.deleteRecipe}>Delete</button>  
+                                        onClick={props.onClickDelete}>Delete</button>  
                                 </div>
                             </div>
                      </div>
                  </Collapse>
             </div>
-        )
-    }
-}
+)
 
-export default Recipe;
-
+export default Recipe; 

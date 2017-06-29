@@ -3,7 +3,7 @@ import './App.css';
 
 //child components 
   // import Header from './components/Header/Header'; 
-  import RecipeBoxContainer from './Components/RecipeBoxContainer';
+  import RecipeBoxContainer from './Containers/RecipeBoxContainer';
   // import Footer from './components/Footer/Footer';
 
 class App extends Component {
