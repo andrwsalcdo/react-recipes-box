@@ -5,7 +5,8 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "styled-components": "^2.1.0"
   },
   "devDependencies": {
     "node-sass-chokidar": "0.0.3",

@@ -7,7 +7,7 @@ const Editor = (props) => (
             <Modal.Title>Recipe Editor</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body>
+        <Modal.Body closeButton>
             <div className="form-group">
                 <label className="control-label">Name</label>
                 <input type="text" className="form-control"
@@ -26,11 +26,9 @@ const Editor = (props) => (
                 value={props.recipe.instructions} onChange={props.handleInstructions}
                 placeholder="How do you do it?"/>
             </div>
+            <Button bsStyle="primary" className="center-block" onClick={props.onClickSave}>Save</Button>  
         </Modal.Body>
 
-        <Modal.Footer>
-            <Button bsStyle="primary" onClick={props.onClickSave}>Save</Button>
-        </Modal.Footer>
     </Modal>
 )
 
