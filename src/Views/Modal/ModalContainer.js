@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Editor from './Editor';
+import ModalItem from './ModalItem';
 
-class EditorContainer extends Component {
+class ModalContainer extends Component {
     constructor(props) {
         super(props)
         let recipe = props.recipe; 
@@ -41,7 +41,7 @@ class EditorContainer extends Component {
 
     render() {
         return (
-            <Editor
+            <ModalItem
                 show={this.props.show}
                 onHide={this.props.onHide}
                 handleName={this.handleName}
@@ -55,4 +55,4 @@ class EditorContainer extends Component {
 
 } 
 
-export default EditorContainer; 
+export default ModalContainer; 

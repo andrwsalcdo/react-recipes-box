@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap'; 
 
-const Editor = (props) => (
+const ModalItem = (props) => (
     <Modal show={props.show} onHide={props.onHide}>
         <Modal.Header closeButton>
             <Modal.Title>Recipe Editor</Modal.Title>
@@ -32,4 +32,4 @@ const Editor = (props) => (
     </Modal>
 )
 
-export default Editor; 
+export default ModalItem; 
