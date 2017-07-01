@@ -1,10 +1,11 @@
 import React from 'react';
-import { Collapse, Button } from 'react-bootstrap';
+import { Collapse } from 'react-bootstrap';
+import Button from './Button'; 
 
 const Recipe= (props) => (
-         <div>
-                <Button bsStyle="primary" onClick={props.onClickToggle}>{props.recipe.name}</Button>
-                 <Collapse in={props.recipeIsHidden}>
+         <div className="text-center">
+                <Button recipe_btn onClick={props.onClickToggle}>{props.recipe.name}</Button>
+                <Collapse in={props.recipeIsHidden}>
                     <div className="container">
                             <div className="row">
                                 <div className="col-sm-6">
@@ -18,8 +19,8 @@ const Recipe= (props) => (
                             </div>
                             <div className="row">
                                 <div className="col-sm-12">
-                                    <Button bsStyle="info" onClick={props.onClickEdit}>Edit</Button>
-                                    <Button bsStyle="danger" onClick={props.onClickDelete}>Delete</Button>                                    
+                                    <Button edit_btn onClick={props.onClickEdit}>Edit</Button>
+                                    <Button delete_btn onClick={props.onClickDelete}>Delete</Button>                                                                        
                                 </div>
                             </div>
                      </div>
