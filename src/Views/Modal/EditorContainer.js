@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Editor from '../Components/Editor';
+import Editor from './Editor';
 
 class EditorContainer extends Component {
     constructor(props) {

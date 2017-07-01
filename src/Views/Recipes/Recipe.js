@@ -1,6 +1,6 @@
 import React from 'react';
 import { Collapse } from 'react-bootstrap';
-import Button from './Button'; 
+import Button from '../../Components/Button'; 
 
 const Recipe= (props) => (
          <div className="text-center">

@@ -3,7 +3,7 @@ import './App.css';
 
 //child components 
   // import Header from './components/Header/Header'; 
-  import RecipeBoxContainer from './Containers/RecipeBoxContainer';
+  import RecipeBox from './Views/RecipeBox/RecipeBox.js';
   // import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div>
           {/*<Header />*/}
-          <RecipeBoxContainer />
+          <RecipeBox />
           {/*<Footer /> */}
       </div>
     );

@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
 //import child components
-    import RecipeBoxTitle from '../Components/RecipeBoxTitle.js'
-    import RecipeContainer from './RecipeContainer';
-    import EditorContainer from './EditorContainer';
-    import NewRecipeButton from '../Components/NewRecipeButton';
+    import RecipeBoxTitle from '../../Components/RecipeBoxTitle.js'
+    import RecipeContainer from '../Recipes/RecipeContainer.js';
+    import EditorContainer from '../Modal/EditorContainer';
+    import NewRecipeButton from '../../Components/NewRecipeButton.js';
 
 //important data methods and recipes for local storage 
-let data = require('../data/localdata'); 
+let data = require('../../data/localdata'); 
 data.initialize(window.localStorage); 
 
 
-class RecipeBoxContainer extends Component {
+class RecipeBox extends Component {
     constructor(props) {
         super(props); 
         this.state = {
@@ -58,4 +58,4 @@ class RecipeBoxContainer extends Component {
 
 
 
-export default RecipeBoxContainer; 
+export default RecipeBox; 

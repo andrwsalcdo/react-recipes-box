@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //child presentational component
-import Recipe from '../Components/Recipe'; 
+import Recipe from './Recipe'; 
 
 class RecipeContainer extends Component {
     constructor(props) {
