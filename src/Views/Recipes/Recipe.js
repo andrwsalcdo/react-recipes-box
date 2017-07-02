@@ -1,7 +1,10 @@
 import React from 'react';
 import { Collapse } from 'react-bootstrap';
 import Button from '../../Components/Button'; 
- 
+
+import AlertItem from '../Alert/AlertItem'; 
+
+
 const Recipe= (props) => (
          <div className="text-center">
                 <Button recipe_btn onClick={props.onClickToggle}>{props.recipe.name}</Button>
@@ -20,7 +23,12 @@ const Recipe= (props) => (
                             <div className="row">
                                 <div className="col-sm-12">
                                     <Button edit_btn onClick={props.onClickEdit}>Edit</Button>
-                                    <Button delete_btn onClick={props.onClickDelete}>Delete</Button>                                                                        
+                                    <Button delete_btn onClick={props.onClickShowAlert}>Delete</Button>
+                                    <AlertItem 
+                                        alertIsOpen={props.alertIsOpen}
+                                        closeAlert={props.onClickCloseAlert}
+                                        delete={props.onClickDelete}
+                                    />                                                                        
                                 </div>
                             </div>
                      </div>

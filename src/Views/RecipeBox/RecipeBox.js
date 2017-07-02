@@ -7,6 +7,7 @@ import React, { Component } from 'react';
     import NewRecipeButton from '../../Components/NewRecipeButton.js';
     import ModalContainer from '../Modal/ModalContainer';
     import RecipeList from '../Recipes/RecipeList.js';
+    
 
 //important data methods and recipes for local storage 
 let data = require('../../data/localdata'); 
