@@ -21,15 +21,16 @@ class RecipeContainer extends Component {
 
     render() {
         return (
-                 <Recipe 
-                    recipeIsHidden={this.state.recipeIsHidden}
-                    recipe={this.props.recipe}
-                    onClickToggle={this.toggle}
-                    onClickEdit={this.edit}
-                    onClickDelete={this.deleteRecipe}
-                 />
+            <Recipe 
+                recipeIsHidden={this.state.recipeIsHidden}
+                recipe={this.props.recipe}
+                onClickToggle={this.toggle}
+                onClickEdit={this.edit}
+                onClickDelete={this.deleteRecipe}
+            />
         )
     }
 }
+
 
 export default RecipeContainer;

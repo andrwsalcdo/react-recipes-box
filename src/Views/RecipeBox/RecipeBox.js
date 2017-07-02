@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 //import child components
     import RecipeBoxTitle from '../../Components/RecipeBoxTitle.js'
-    import RecipeContainer from '../Recipes/RecipeContainer.js';
-    import ModalContainer from '../Modal/ModalContainer';
     import NewRecipeButton from '../../Components/NewRecipeButton.js';
+    import ModalContainer from '../Modal/ModalContainer';
+    import RecipeList from '../Recipes/RecipeList.js';
 
 //important data methods and recipes for local storage 
 let data = require('../../data/localdata'); 
@@ -14,7 +14,7 @@ data.initialize(window.localStorage);
 class RecipeBox extends Component {
     constructor(props) {
         super(props); 
-        this.state = {
+        this.state = { 
             modalIsOpen: false, 
             currentRecipe: {}, 
             recipes: data.getRecipes(),
@@ -31,31 +31,29 @@ class RecipeBox extends Component {
         data.saveRecipe(recipe); 
         this.setState({recipes: data.getRecipes() })
     }
+    //edit recipe 
+    edit = (recipe) => {
+        this.setState({ currentRecipe: recipe}, () => {this.setState({ modalIsOpen: true })} )
+    }
     //delete recipe
     deleteRecipe = (recipe) => {
         data.deleteRecipe(recipe); 
         this.setState({ recipes: data.getRecipes() })
     }
-    //edit recipe 
-    edit = (recipe) => {
-        this.setState({ currentRecipe: recipe}, () => {this.setState({ modalIsOpen: true })} )
-    }
     render() {
-        let recipes = this.state.recipes.map((recipe,i) => {
-            return (<RecipeContainer key={i} recipe={recipe} delete={this.deleteRecipe} edit={this.edit} />)
-        })
         return (
             <div className="container">
                 <RecipeBoxTitle />
                 <NewRecipeButton onClickOpen={this.open} />
                 <ModalContainer save={this.save} show={this.state.modalIsOpen} onHide={this.close} 
                 recipe={this.state.currentRecipe} />
-                {recipes}
+                <RecipeList 
+                    recipes={this.state.recipes} deleteRecipe={this.deleteRecipe} edit={this.edit}
+                />
             </div>
         )
     }
 }
-
 
 
 export default RecipeBox; 
