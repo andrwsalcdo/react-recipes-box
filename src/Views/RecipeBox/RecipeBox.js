@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
+
 //import child components
+    import Container from '../../Components/Container.js'
     import RecipeBoxTitle from '../../Components/RecipeBoxTitle.js'
     import NewRecipeButton from '../../Components/NewRecipeButton.js';
     import ModalContainer from '../Modal/ModalContainer';
@@ -42,15 +44,17 @@ class RecipeBox extends Component {
     }
     render() {
         return (
-            <div className="container">
-                <RecipeBoxTitle />
-                <NewRecipeButton onClickOpen={this.open} />
-                <ModalContainer save={this.save} show={this.state.modalIsOpen} onHide={this.close} 
-                recipe={this.state.currentRecipe} />
-                <RecipeList 
-                    recipes={this.state.recipes} deleteRecipe={this.deleteRecipe} edit={this.edit}
-                />
-            </div>
+            <Container big_box>
+                <Container className="container">
+                    <RecipeBoxTitle />
+                    <NewRecipeButton onClickOpen={this.open} />
+                    <ModalContainer save={this.save} show={this.state.modalIsOpen} onHide={this.close} 
+                    recipe={this.state.currentRecipe} />
+                    <RecipeList 
+                        recipes={this.state.recipes} deleteRecipe={this.deleteRecipe} edit={this.edit}
+                    />
+                </Container>
+            </Container>
         )
     }
 }

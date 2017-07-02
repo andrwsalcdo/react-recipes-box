@@ -1,10 +1,11 @@
 import React from 'react';
-import Button from './Button'; 
+import Button from './Button';
+import Container from './Container';  
 
 const NewRecipeButton = (props) => (
-    <div className="panel text-center">
+    <Container normal className="panel text-center">
         <Button add_btn onClick={props.onClickOpen}>New Recipe</Button>
-    </div>
+    </Container>
 )
 
 export default NewRecipeButton; 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Collapse } from 'react-bootstrap';
 import Button from '../../Components/Button'; 
-
+ 
 const Recipe= (props) => (
          <div className="text-center">
                 <Button recipe_btn onClick={props.onClickToggle}>{props.recipe.name}</Button>
-                <Collapse in={props.recipeIsHidden}>
+                <Collapse className="recipe_collapse" in={props.recipeIsHidden}>
                     <div className="container">
                             <div className="row">
                                 <div className="col-sm-6">
@@ -25,7 +25,7 @@ const Recipe= (props) => (
                             </div>
                      </div>
                  </Collapse>
-            </div>
+          </div>
 )
 
 export default Recipe; 
