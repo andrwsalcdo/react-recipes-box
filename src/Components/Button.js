@@ -1,5 +1,6 @@
 import styled from 'styled-components'; 
 import { css } from 'styled-components'
+import Colors from '../Colors'; 
 
 const Button = styled.button`
     border: none;
@@ -11,7 +12,7 @@ const Button = styled.button`
     padding: 6px;
     width: 25%; 
  
-    :active {
+    &:active {
         transform: translateY(5px); 
     }
 
@@ -20,8 +21,8 @@ const Button = styled.button`
     }
 
     ${props => props.add_btn && css`
-        background: #F39C12;
-        color: white;
+        background: ${Colors.butterCup};
+        color: ${Colors.white};
         
         @media only screen and (max-width: 655px) {
             margin-right: 1em; 
@@ -29,13 +30,14 @@ const Button = styled.button`
     `}
     
     ${props => props.recipe_btn && css`
-        background: #03C9A9;
-        color: white;
+        background: ${Colors.caribbeanGreen};
+        color: ${Colors.white};
+        margin: 0.3em; 
     `}
     
     ${props => props.edit_btn && css`
-        background: #F5D76E;
-        color: white;
+        background: ${Colors.creamCan};
+        color: ${Colors.white};
         margin-right: 5%; 
         width: 15%; 
         
@@ -46,8 +48,8 @@ const Button = styled.button`
     `}
 
     ${props => props.delete_btn && css`
-        background: salmon; 
-        color: white;
+        background: ${Colors.salmon}; 
+        color: ${Colors.white};
         margin-left: 5%; 
         width: 15%; 
         

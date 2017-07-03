@@ -1,13 +1,11 @@
 import styled from 'styled-components'; 
 import { css } from 'styled-components'
- 
-const avocado = '#50c473';
-const arepa = '#E7CD84';  
-const lavenderBlush = '#FEF1F3'; 
+import Colors from '../Colors'; 
+
 
 const Container = styled.div`
-    background: #FEF1F3;
-    border: 15px solid ${arepa};
+    background: ${Colors.lavenderBlush};
+    border: 15px solid ${Colors.arepa};
     border-radius: 10px;
     display: inline-block;
     margin: 10px;
@@ -16,7 +14,7 @@ const Container = styled.div`
     width: 95%;
 
     ${props => props.big_box && css`
-        background: ${avocado};
+        background: ${Colors.avocado};
         border: none; 
         border-radius: 15px;
         margin-left: 10%; 
@@ -27,7 +25,7 @@ const Container = styled.div`
     `}
 
     ${props => props.normal && css`
-        background: ${lavenderBlush}; 
+        background: ${Colors.lavenderBlush}; 
         border: none; 
     `}
 
