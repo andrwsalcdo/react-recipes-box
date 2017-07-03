@@ -13,5 +13,7 @@ export default {
  
  salmon: '#FFA07A',
  
- white: '#fff' 
+ white: '#fff',
+
+ emerald: '#4BD989'
 };

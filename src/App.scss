@@ -1,3 +1,15 @@
+ //Colors 
+    $mandy: #E54E61;
+    $trueV: #876bc5;
+
 .recipe_collapse {
     width: inherit; 
+}
+
+
+.modal-header  {
+    background: $trueV;  
+}
+.modal-body { 
+    background: $mandy; 
 }

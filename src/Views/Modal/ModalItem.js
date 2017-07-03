@@ -1,13 +1,14 @@
 import React from 'react';
-import { Button, Modal } from 'react-bootstrap'; 
+import {  Modal } from 'react-bootstrap';
+import Button from '../../Components/Button';  
 
 const ModalItem = (props) => (
     <Modal show={props.show} onHide={props.onHide}>
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="modal-header">
             <Modal.Title>Recipe Editor</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body closeButton>
+        <Modal.Body className="modal-body">
             <div className="form-group">
                 <label className="control-label">Name</label>
                 <input type="text" className="form-control"
@@ -26,9 +27,8 @@ const ModalItem = (props) => (
                 value={props.recipe.instructions} onChange={props.handleInstructions}
                 placeholder="How do you do it?"/>
             </div>
-            <Button bsStyle="primary" className="center-block" onClick={props.onClickSave}>Save</Button>  
+            <Button save_btn className="center-block" onClick={props.onClickSave}>Save</Button>  
         </Modal.Body>
-
     </Modal>
 )
 
