@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-
-
 //import child components
     import Container from '../../Components/Container.js'
     import RecipeBoxTitle from '../../Components/RecipeBoxTitle.js'
-    import NewRecipeButton from '../../Components/NewRecipeButton.js';
-    import ModalContainer from '../Modal/ModalContainer';
-    import RecipeList from '../Recipes/RecipeList.js';
-    
-
+    import NewRecipeButton from '../../Components/NewRecipeButton.js'
+    import ModalContainer from '../Modal/ModalContainer'
+    import RecipeList from '../Recipes/RecipeList.js'
+    import SocialLink from '../../Components/SocialLink.js'
 //important data methods and recipes for local storage 
-let data = require('../../data/localdata'); 
-data.initialize(window.localStorage); 
+    let data = require('../../data/localdata')
+    data.initialize(window.localStorage)
 
 
 class RecipeBox extends Component {
@@ -54,6 +51,7 @@ class RecipeBox extends Component {
                     <RecipeList 
                         recipes={this.state.recipes} deleteRecipe={this.deleteRecipe} edit={this.edit}
                     />
+                    <SocialLink />
                 </Container>
             </Container>
         )
