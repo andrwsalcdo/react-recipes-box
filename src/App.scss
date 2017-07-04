@@ -7,6 +7,13 @@
     $creamCan: #F5D76E; 
     $butterCup:  #F39C12;
 
+body {
+  margin-bottom: 60px; 
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
 //Recipe ingredients & instructions text 
 .recipe_collapse {
     width: inherit; 

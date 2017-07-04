@@ -21,8 +21,7 @@ const Button = styled.button`
         background: ${Colors.butterCup};
         color: ${Colors.white};
         
-        @media only screen and (max-width: 655px) {
-            margin-right: 1em; 
+        @media only screen and (max-width: 655px) { 
             width: 80%; 
         }
     `}

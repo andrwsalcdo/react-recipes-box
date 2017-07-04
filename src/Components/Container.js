@@ -8,7 +8,7 @@ const Container = styled.div`
     border: 15px solid ${Colors.arepa};
     border-radius: 10px;
     display: inline-block;
-    margin: 10px;
+    margin: 10px
     padding-bottom: 15px;
     padding-top: 1px;
     width: 95%;
@@ -17,8 +17,7 @@ const Container = styled.div`
         background: ${Colors.avocado};
         border: none; 
         border-radius: 15px;
-        margin-left: 10%; 
-        margin-top: 8%;
+        margin: 3em 8%; 
         padding: 15px;
         text-align: center;
         width: 80vw;

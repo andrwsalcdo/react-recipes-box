@@ -12,15 +12,12 @@ const FooterDiv = styled.div`
         position: fixed;
         padding: 1em 0;
         right: 0; 
+        height: 60px;
 `;
 
 const Footer = () => (
     <FooterDiv>
-      <div className="row">
-        <div className="col-sm-12">
-            <p className="text-center">Made with <FaHeart size={25} color="salmon" /> by Andrew Salcedo</p>
-        </div>
-      </div>
+        <p className="text-center">Made with <FaHeart size={25} color="salmon" /> by Andrew Salcedo</p>
     </FooterDiv>
 )
 
