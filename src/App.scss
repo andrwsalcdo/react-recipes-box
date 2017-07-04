@@ -1,15 +1,31 @@
  //Colors 
     $mandy: #E54E61;
     $trueV: #876bc5;
+    $salmon: #FFA07A; 
+    $avocado: #50c473;
+    $white: #fff; 
 
+
+//Recipe ingredients & instructions text 
 .recipe_collapse {
     width: inherit; 
 }
 
-
+//Modals for Add & Edit Recipes
 .modal-header  {
     background: $trueV;  
 }
 .modal-body { 
     background: $mandy; 
+}
+
+
+//Delete confirmation alert modal
+.alert-modal {
+    background: $salmon; 
+}
+.alert-modal p {
+    color: $white; 
+    margin: 1em; 
+    font-weight: 700; 
 }
