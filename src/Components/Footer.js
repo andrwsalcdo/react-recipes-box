@@ -9,13 +9,13 @@ const FooterDiv = styled.div`
         color: ${Colors.creamCan}; 
         left: 0; 
         overflow: hidden;  
-        position: absolute;
+        position: fixed;
         padding: 1em 0;
         right: 0; 
 `;
 
 const Footer = () => (
-    <FooterDiv className="container-fluid">
+    <FooterDiv>
       <div className="row">
         <div className="col-sm-12">
             <p className="text-center">Made with <FaHeart size={25} color="salmon" /> by Andrew Salcedo</p>
