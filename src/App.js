@@ -2,17 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 
 //child components 
-  // import Header from './components/Header/Header'; 
   import RecipeBox from './Views/RecipeBox/RecipeBox.js';
-  // import Footer from './components/Footer/Footer';
+  import Footer from './Components/Footer.js';
 
 class App extends Component {
   render() {
     return (
       <div>
-          {/*<Header />*/}
           <RecipeBox />
-          {/*<Footer /> */}
+          <Footer /> 
       </div>
     );
   }
