@@ -15,5 +15,7 @@ export default {
  
  white: '#fff',
 
- emerald: '#4BD989'
+ emerald: '#4BD989', 
+
+ pomegranate: '#EE3233'
 };

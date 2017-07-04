@@ -72,9 +72,23 @@ const Button = styled.button`
         }
     `}
 
+    ${props => props.yes_btn && css`
+        background: ${Colors.pomegranate}; 
+        color: ${Colors.white}; 
+        margin-bottom: 1em; 
+        width: 3em; 
+        margin-right: 1em; 
     
+    `}
+    
+    ${props => props.no_btn && css`
+        background: ${Colors.avocado}; 
+        color: ${Colors.white}; 
+        margin-bottom: 1em; 
+        width: 2.5em; 
+    `}
 
-`;
+`; 
 
-export default Button; 
+export default  Button;
 
