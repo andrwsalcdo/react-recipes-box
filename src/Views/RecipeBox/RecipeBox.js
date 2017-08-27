@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import child components
     import Container from '../../Components/Container.js'
-    import RecipeBoxTitle from '../../Components/RecipeBoxTitle.js'
+    import Title from '../../Components/Title.js'
     import NewRecipe from '../../Components/NewRecipe.js'
     import ModalContainer from '../Modal/ModalContainer'
     import RecipeList from '../Recipes/RecipeList.js'
@@ -44,7 +44,7 @@ class RecipeBox extends Component {
         return (
             <Container big_box>
                 <Container className="container">
-                    <RecipeBoxTitle />
+                    <Title textValue="Recipe Box" />
                     <NewRecipe onClickOpen={this.open} />
                     <ModalContainer save={this.save} show={this.state.modalIsOpen} onHide={this.close} 
                     recipe={this.state.currentRecipe} />
