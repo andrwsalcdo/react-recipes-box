@@ -8,10 +8,7 @@ const Container = styled.div`
     border: 15px solid ${Colors.arepa};
     border-radius: 10px;
     display: inline-block;
-    margin: 10px
-    padding-bottom: 15px;
-    padding-top: 1px;
-    width: 95%;
+    width: 85%;
 
     ${props => props.big_box && css`
         background: ${Colors.avocado};
@@ -23,8 +20,7 @@ const Container = styled.div`
         width: 80vw;
     `}
 
-    ${props => props.normal && css`
-        background: ${Colors.lavenderBlush}; 
+    ${props => props.newRecipe && css`
         border: none; 
     `}
 
