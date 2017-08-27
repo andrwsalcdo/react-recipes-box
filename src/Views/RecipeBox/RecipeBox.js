@@ -5,7 +5,9 @@ import React, { Component } from 'react';
     import NewRecipe from '../../Components/NewRecipe.js'
     import ModalContainer from '../Modal/ModalContainer'
     import RecipeList from '../Recipes/RecipeList.js'
-    import SocialLink from '../../Components/SocialLink.js'
+    import StyledLink from '../../Components/SocialLink.js'
+// import Social Link Icon ~ github to pass as props
+    import FaGithub from 'react-icons/lib/fa/github';
 //important data methods and recipes for local storage 
     let data = require('../../data/localdata')
     data.initialize(window.localStorage)
@@ -51,7 +53,9 @@ class RecipeBox extends Component {
                     <RecipeList 
                         recipes={this.state.recipes} deleteRecipe={this.deleteRecipe} edit={this.edit}
                     />
-                    <SocialLink />
+                    <StyledLink pull_to_right link="https://github.com/andrwsalcdo/react-recipes-box"
+                            icon={<FaGithub size={25} color="black" />}
+                        />
                 </Container>
             </Container>
         )
